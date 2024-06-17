@@ -17,8 +17,7 @@ import json
 url = 'http://3.149.239.133:8000/predict/'
 # The local function(post,put,get,delete) must be  same with the server
 files = {'file': open('01.JPG', 'rb')}  # 替换为你的图像文件路径
-
-response = requests.delete(url, files=files)
+response = requests.post(url, files=files)
 # 解析JSON响应来获取base64编码的图像数据
 response_json = response.json()
 base64_image = response_json['base64_image']
